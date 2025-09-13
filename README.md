@@ -1,4 +1,4 @@
-# Fastbot Lap Racer (ROS 2 • Python • OpenCV • Gazebo)
+# F1 Autonomous Racing Robot (ROS 2 • Python • OpenCV • Gazebo)
 
 Vision-driven controller that makes the **yellow Fastbot** complete a full lap in simulation.  
 **Result:** best lap **110 s** (consistent, repeatable finishes).
