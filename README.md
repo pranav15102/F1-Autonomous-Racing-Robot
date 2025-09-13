@@ -2,8 +2,8 @@
 
 Vision-driven controller that makes the **yellow Fastbot** complete a full lap in simulation.  
 **Result:** best lap **110 s** (consistent, repeatable finishes).
-**Video Link: https://youtu.be/lC52FBxfscU**
-**ROS + Gazebo Cloud Environment (Docker-based): https://app.theconstruct.ai/l/6c3e7d72/**
+**Video Link: https://youtu.be/lC52FBxfscU**.
+**ROS + Gazebo Cloud Environment (Docker-based): https://app.theconstruct.ai/l/6c3e7d72/**.
 
 ---
 
