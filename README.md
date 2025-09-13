@@ -40,7 +40,6 @@ flowchart LR
   end
   CTRL -->|geometry_msgs/Twist| CMD[/cmd_vel: /fastbot_1/cmd_vel/]
 ```
-*If Mermaid fails to render on GitHub, ensure the file extension is `.md` and that Mermaid is enabled in your repo settings (it is on by default for public repos).*
 
 ---
 
