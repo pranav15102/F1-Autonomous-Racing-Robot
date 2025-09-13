@@ -1,4 +1,3 @@
-# F1-Autonomous-Racing-Robot
 # Fastbot Lap Racer (ROS 2 • Python • OpenCV • Gazebo)
 
 Vision-driven controller that makes the **yellow Fastbot** complete a full lap in simulation.  
@@ -19,8 +18,7 @@ Vision-driven controller that makes the **yellow Fastbot** complete a full lap i
 - [Tuning guide](#-tuning-guide)
 - [Troubleshooting](#-troubleshooting)
 - [Roadmap](#-roadmap)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
+
 
 ---
 
@@ -34,14 +32,15 @@ Vision-driven controller that makes the **yellow Fastbot** complete a full lap i
 ## 🧱 System overview
 ```mermaid
 flowchart LR
-    CAM[/camera: /fastbot_1/camera/image_raw/] -->|cv_bridge| PERCEPT
-    subgraph Node: FastBotController (ROS 2 / Python)
-      PERCEPT[HSV mask → contours → centroid]
-      CTRL[error → feedback steering + adaptive speed → yaw clamp]
-      PERCEPT --> CTRL
-    end
-    CTRL -->|geometry_msgs/Twist| CMD[/cmd_vel: /fastbot_1/cmd_vel/]
+  CAM[/camera: /fastbot_1/camera/image_raw/] -->|cv_bridge| PERCEPT
+  subgraph fastbot_node["FastBotController (ROS 2 / Python)"]
+    PERCEPT["HSV mask -> contours -> centroid"]
+    CTRL["error -> feedback steering + adaptive speed -> yaw clamp"]
+    PERCEPT --> CTRL
+  end
+  CTRL -->|geometry_msgs/Twist| CMD[/cmd_vel: /fastbot_1/cmd_vel/]
 ```
+*If Mermaid fails to render on GitHub, ensure the file extension is `.md` and that Mermaid is enabled in your repo settings (it is on by default for public repos).*
 
 ---
 
@@ -192,17 +191,6 @@ ros2 run follow_track follow_node   --ros-args   -r /fastbot_1/camera/image_raw:
 
 ---
 
-## 📄 License
-MIT — see `LICENSE`.
-
----
-
-## 🙌 Acknowledgments
-- Fastbot contest world and starter topic list provided by the simulation environment.
-- Thanks to the ROS 2 and OpenCV communities.
-
----
-
 ### Quick start (copy/paste)
 ```bash
 # build
@@ -214,6 +202,5 @@ colcon build
 source install/setup.bash
 
 # run (default topics)
-ros2 launch follow_track follow_track.launch.py
+ros2 run follow_track follow_node
 ```
-
